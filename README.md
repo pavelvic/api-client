@@ -6,8 +6,14 @@ I use it in my projects.
     //get api
     Api api = new Api("https://reqres.in/");
 	//arrange
-	RegisterRequest requestBody = RegisterRequest.builder().email("eve.holt@reqres.in").password("pistol").build();
-    RegisterResponse expectedResponse = RegisterResponse.builder().id("4").token("QpwL5tke4Pnpja7X4").build();
+	RegisterRequest requestBody = RegisterRequest.builder()
+	.email("eve.holt@reqres.in")
+	.password("pistol")
+	.build();
+    RegisterResponse expectedResponse = RegisterResponse.builder()
+    .id("4")
+    .token("QpwL5tke4Pnpja7X4")
+    .build();
     //act
     ApiRequest<RegisterRequest> apiRequest = new ApiRequest<>(requestBody);
     ApiResponse<RegisterResponse, RegisterResponseError> apiResponse = api.register(apiRequest);
